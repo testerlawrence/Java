@@ -54,6 +54,16 @@ public class ArrayConcept {
 				System.out.println(d[m][n]);
 			}
 		}
+		
+		// Object Array
+		Object ob[] = new Object[4];
+		ob[0] = 1;
+		ob[1] = "Apple";
+		ob[2] = 12.34;
+		ob[3] = true;
+		for(int p=0; p<ob.length; p++)
+		{
+			System.out.println(ob[p]);
+		}
 	}
-
 }
