@@ -1,17 +1,19 @@
+/************************
+1) Static keyword can be used with class, variable, method and block.
+2) Static members belong to the class instead of a specific instance, this means if you make a member static, you can access it without object.
+*************************/
+
 package javabasics;
 
 public class StaticConcept {
 	
-	// static variables
 	// A static variable is common to all the instances (or objects) of the class because it is a class level variable.
-	// In other words you can say that only a single copy of static variable is created and shared among all the instances of the class.
-	// Memory allocation for such variables only happens once when the class is loaded in the memory.
+	// In other words you can say that only a single copy of static variable is created and shared among all the instances of the class.	
 	// Static variables are also known as Class Variables.
 	// Unlike non-static variables, static variables can be accessed directly in static and non-static methods.
 	static int id;
-	static String name;
+	static String name;	
 	
-	// non-static (instance) variable
 	// Non-static variables are specific to the instances.
 	String street;
 	
@@ -20,8 +22,7 @@ public class StaticConcept {
 	{
 		System.out.println("Static method belongs to the class.");
 	}
-		
-	// static block
+			
 	// Static block is used for initializing the static variables.
 	// This block gets executed when the class is loaded in the memory.
 	// A class can have multiple Static blocks, which will be executed in the same sequence in which they have been written into the program.
@@ -58,30 +59,16 @@ public class StaticConcept {
 		StaticConcept obj1 = new StaticConcept();
 		StaticConcept obj2 = new StaticConcept();
 		
-		obj1.id = 2;
-		obj1.name = "name2";
-		obj1.street = "street2";
+		id = 2;
+		StaticConcept.name = "name2";
 		
-		obj2.id = 3;
-		obj2.name = "name3";
-		obj2.street = "street3";
-		
-		System.out.println();
-		System.out.println("obj1.id = " + obj1.id);
-		System.out.println("obj1.name = " + obj1.name);
+		obj1.street = "street1";		
+		obj2.street = "street2";
+	
 		System.out.println("obj1.street = " + obj1.street);
-		
-		System.out.println();
-		System.out.println("obj2.id = " + obj2.id); // static variable is overwritten here since it is common to all instances
-		System.out.println("obj2.name = " + obj2.name); // static variable is overwritten here since it is common to all instances
-		System.out.println("obj2.street = " + obj2.street); // non-static variable is not overwritten since it is specific to individual instances
+		System.out.println("obj2.street = " + obj2.street);
 		
 		StaticConcept.nestedClass objNC = new StaticConcept.nestedClass();
 		objNC.display();
 	}
 }
-
-/************************
-1) Static keyword can be used with class, variable, method and block.
-2) Static members belong to the class instead of a specific instance, this means if you make a member static, you can access it without object.
-*************************/
